@@ -1,7 +1,7 @@
 <template>
   <div id="sidebar">
     <img class="gif" src="../assets/gif2.gif" alt="" />
-	<span class="newGame">StartGame</span>
+	<span v-on:click="$emit('play')" class="newGame">StartGame</span>
   </div>
 </template>
 

@@ -1,40 +1,62 @@
 <template>
   <div v-if="mainPage">
-    <HelloWorld  msg="Welcome to Your Vue.js App" />
-    <navbar />
+    <mainPage />
+    <navbar @back="back" />
   </div>
-    <div v-if="page1">
-    <page1 />
+  <div v-if="page1">
+    <page1 @play="play" />
   </div>
   <div v-if="page2">
-    <sidebar />
+    <sidebar @back="back" @home="home" />
     <page2 />
   </div>
   {{ dio }}
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+//import HelloWorld from "./components/HelloWorld.vue";
 import Navbar from "./components/navbar.vue";
 import sidebar from "./components/sidebar.vue";
 import page1 from "./components/page1.vue";
 import page2 from "./components/page2.vue";
+import mainPage from "./components/mainPage.vue";
 
 export default {
   name: "App",
   data() {
     return {
-      page1: false,
+      page1: true,
       page2: false,
-      mainPage: true,
+      mainPage: false,
     };
   },
   components: {
-    HelloWorld,
+    //HelloWorld,
     Navbar,
     sidebar,
     page1,
     page2,
+    mainPage,
+  },
+  methods: {
+    play() {
+      this.mainPage = false;
+      this.page1 = false;
+      this.page2 = true;
+      console.log('play');
+    },
+    back() {
+      this.page2 = false;
+      this.mainPage = false;
+      this.page1 = true;
+      console.log('back');
+    },
+        home() {
+      this.page2 = false;
+      this.page1 = false;
+      this.mainPage = true;
+      console.log('main');
+    },
   },
 };
 </script>

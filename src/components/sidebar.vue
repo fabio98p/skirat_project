@@ -7,10 +7,10 @@
       </div>
       <ul>
         <li v-for="item in items" :key="item">
-          <a :href="dio">{{item.name}}</a>
+          <a v-on:click="$emit('home')" :href="`#${item.name}`">{{item.name}}</a>
           <hr>
         </li>
-        <li>Return</li>
+        <li v-on:click="$emit('back')">Return</li>
       </ul>
     </div>
   </div>

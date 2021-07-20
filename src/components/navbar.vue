@@ -1,13 +1,13 @@
 <template>
   <nav>
     <div class="container">
-      <div class="logo">
+      <div v-on:click="$emit('back')" class="logo">
         <img src="../assets/skirat_logo_vettoriale.svg" alt="" />
         <div class="logoName">Skirat Games</div>
       </div>
       <ul>
-        <li v-for="item in 10" :key="item">
-          <a href="{{item.name}}">{{ dio }}</a>
+        <li v-for="item in items" :key="item">
+          <a :href="`#${item.name}`">{{ item.name }}</a>
         </li>
       </ul>
     </div>
@@ -19,8 +19,7 @@ export default {
   name: "navbar",
   data() {
     return {
-      dio: "Caro",
-      items: [1, 2, 3, 4, 5],
+      items: [{ name: "New Game" }, { name: "Load Game" }, { name: "Continue" }, { name: "Options" }, { name: "Quit" }],
     };
   },
 };
