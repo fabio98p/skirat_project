@@ -98,4 +98,55 @@ span:hover:after {
   top: -10px;
   left: -10px;
 }
+
+audio {
+/*border-radius: 90px;*/
+width: 120px;
+height: 45px;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+audio::-webkit-media-controls-timeline-container{
+display: none !important;
+}
+
+audio::-webkit-media-controls-current-time-display{
+display: none !important;
+}
+
+audio::-webkit-media-controls-time-remaining-display{
+display: none !important;
+}
+
+audio::-webkit-media-controls-timeline{
+display: none !important;
+}
+
+audio::-webkit-media-controls-seek-back-button{
+display: none !important;
+}
+
+audio::-webkit-media-controls-seek-forward-button{
+display: none !important;
+}
+
+audio::-webkit-media-controls-fullscreen-button{
+display: none !important;
+}
+
+audio::-webkit-media-controls-rewind-button{
+display: none !important;
+}
+
+audio::-webkit-media-controls-return-to-realtime-button{
+display: none !important;
+}
+
+audio::-webkit-media-controls-toggle-closed-captions-button{
+display: none !important;
+}
+audio::-webkit-media-controls-panel, video::-webkit-media-controls-panel {
+  background-color: orange;
+}
+
 </style>
