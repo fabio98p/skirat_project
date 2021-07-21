@@ -1,8 +1,12 @@
 <template>
   <div id="sidebar">
     <img class="gif" src="../assets/gif2.gif" alt="" />
-	<span v-on:click="$emit('play')" class="newGame">StartGame</span>
+    <span v-on:click="$emit('play')" class="newGame">StartGame</span>
   </div>
+  <audio loop volume="0.01" controls autoplay>
+    <source src="../assets/Sayo-nara.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
 </template>
 
 <script>
@@ -24,15 +28,15 @@ export default {
   left: 50%;
   top: 70%;
   transform: translate(-50%, -50%);
-	color: coral;
-	font-size: 80px;
+  color: coral;
+  font-size: 80px;
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap");
 
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: black;
   height: 100vh;
   width: 100vw;
@@ -93,5 +97,5 @@ span:hover:before {
 span:hover:after {
   top: -10px;
   left: -10px;
-} 
+}
 </style>
